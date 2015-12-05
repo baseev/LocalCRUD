@@ -1,0 +1,10 @@
+<div>
+<h2>Delete Employee</h2>
+<div>
+<label>Name </label><input ng-model="search.name" />
+<label>Title </label><input ng-model="search.title" />
+<label>Description </label><input ng-model="search.description" />
+<label>Joining date </label><input ng-model="search['joining date']" />
+<label>Years of experice </label><input ng-model="search['years of experice']" />
+</div>
+</div>

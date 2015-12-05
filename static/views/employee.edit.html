@@ -1,0 +1,33 @@
+<section data-ng-init="edit()">
+<h2>Edit Employee</h2>
+<form name="editEmpForm" class="edit-employee" ng-submit="update(editEmpForm.$valid)" novalidate>
+<div>
+<label>Name </label><input ng-model="employee.name" name="name" required />
+<br/>
+<div ng-show="editEmpForm.$submitted">
+    <div ng-show="editEmpForm.name.$error.required">Please enter employee name.</div>
+</div>
+<label>Title </label><input ng-model="employee.title" name="title" required />
+<br/>
+<div ng-show="editEmpForm.$submitted">
+    <div ng-show="editEmpForm.title.$error.required">Please enter employee title.</div>
+</div>
+<label>Description </label><input ng-model="employee.description" name="description" required />
+<br/>
+<div ng-show="editEmpForm.$submitted">
+    <div ng-show="editEmpForm.description.$error.required">Please enter employee description.</div>
+</div>
+<label>Joining date </label><input ng-model="employee['joining date']" name="joining_date" required />
+<br/>
+<div ng-show="editEmpForm.$submitted">
+    <div ng-show="editEmpForm.joining_date.$error.required">Please enter employee joining date.</div>
+</div>
+<label>Years of experice </label><input ng-model="employee['years of experice']" name="years_of_experice" required />
+<br/>
+<div ng-show="editEmpForm.$submitted">
+    <div ng-show="editEmpForm.years_of_experice.$error.required">Please enter employee years of experience.</div>
+</div>
+<input type="submit" value="Save" /><a href="#!/employee">Back</a>
+</div>
+</form>
+</section>

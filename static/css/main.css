@@ -1,0 +1,126 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+body{margin:0;
+padding:0;
+background-color:#f1f1f1;
+font-family: 'Open Sans', sans-serif;
+font-size:13px;
+}
+nav ul{
+	margin:0;
+  padding:0;
+	}
+nav ul li{
+	padding:10px 55px;
+	display:inline;
+	list-atyle type:none;
+	background-color:#58ACFA;
+	float:left;
+	box-shadow: inset -10px -10px 35px 4px #478FE6;
+-webkit-box-shadow: inset -10px -10px 35px 4px #478FE6;
+-moz-box-shadow: inset -10px -10px 35px 4px #478FE6;
+-o-box-shadow: inset -10px -10px 35px 4px #478FE6;
+}
+nav ul li:hover{
+	background-color:#69C;
+	cursor:pointer;
+}
+nav ul li.active{
+	background-color:#f1f1f1;
+	box-shadow: inset -10px -10px 35px 4px #ccc;
+-webkit-box-shadow: inset -10px -10px 35px 4px #ccc;
+-moz-box-shadow: inset -10px -10px 35px 4px #ccc;
+-o-box-shadow: inset -10px -10px 35px 4px #ccc;
+}
+nav ul li.active a{color:#000;}
+nav ul li a{
+	font-size:15px;
+	color:#fff;
+	text-decoration:none;
+	}
+header,.container{
+	width:60%;
+	margin:30px auto;
+}
+.content .container{
+	background-color:#fff;
+	padding-top:20px;
+}
+.content{
+	clear:both;
+	}
+section{
+	padding:10px 20px;
+  clear:both;
+}
+section div{
+	padding:6px 0;
+}
+.employee-info div{
+	padding:3px 0;
+	}
+.employee-info h3{
+	margin:5px 0;
+}
+section label{
+	display:inline-block;
+	width:150px;
+	text-align:right;
+}
+section input{
+	  width: 260px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border:1px solid #ccc;
+		border-radius:4px;
+		padding:5px 10px;
+		}
+input:focus{
+	border-color:#58ACFA;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+
+
+@media screen and (max-width:480px){
+	nav ul li{
+		display:inline-block;
+		width:100%;
+		text-align:center;
+		padding:10px 0;
+	 }
+	section label{
+		width:30%;
+	}
+	section input{
+		width:65%;
+		}
+	header,.container{
+		width:100%;
+		}
+	}
+	
+	@media screen and (min-width:481px) and (max-width:1024px){
+		nav ul li{
+		width: 50%;
+    float: left;
+    padding: 10px 0;
+		text-align:center;
+		}
+		section label{
+			width:30%;
+	    }
+	  section input{
+		width:55%;
+		}
+		header,.container{
+			width:100%;
+		}
+	}
+.edit-employee input.ng-invalid.ng-touched, .add-employee input.ng-invalid.ng-touched {
+background-color: #FA787E;
+}
+
+.add-employee input.ng-valid.ng-touched, .add-employee input.ng-valid.ng-touched {
+background-color: #78FA89;
+}
