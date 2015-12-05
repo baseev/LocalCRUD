@@ -1,9 +1,0 @@
-<section data-ng-init="init()">
-<label>Name </label><input ng-model="employee.name" />
-<label>Title </label><input ng-model="employee.title" />
-<label>Description </label><input ng-model="employee.description" />
-</section>		
-<section class="employee-info" ng-repeat="emp in employees | filter:employee:strict">
-	<div>{{emp.name}}, {{emp.title}}, {{emp.description}}, {{emp['years of experice']}}, {{emp['joining date']}}, <a data-ng-href="#!/employee/edit/{{$index}}">Edit</a>, <a href data-ng-click="remove($index)">Delete</a></div>
-</section>
-
