@@ -113,6 +113,9 @@ angular.module('index').controller('indexCtrl', ['$scope', '$routeParams', '$loc
 		var data = dataStore.save($scope.employee);
 		console.log("add... "+JSON.stringify(data));	
 		$scope.employee = null;
+		$scope.addEmpForm.$setPristine();
+		$scope.status = true;
+		$scope.currentRecord={};
 	},
 	$scope.edit = function() {
 		$scope.currentTab = 1;

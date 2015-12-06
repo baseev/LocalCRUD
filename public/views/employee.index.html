@@ -9,7 +9,7 @@
 		<label for="description">Description </label><input ng-model="employee.description"  name="description" />
 	</div>
 </section>		
-<section class="employee-info" ng-repeat="emp in employees | filter:employee:strict">
+<section class="employee-info" ng-repeat="emp in employees | filter:employee:strict track by $index ">
 	<div>{{emp.name}}, {{emp.title}}, {{emp.description}}, {{emp['years of experice']}}, {{emp['joining date']}}, <a data-ng-href="#!/employee/edit/{{$index}}">Edit</a>, <a href data-ng-click="remove($index)">Delete</a>
 	</div>
 </section>

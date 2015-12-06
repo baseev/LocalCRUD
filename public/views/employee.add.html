@@ -1,6 +1,9 @@
 <section>
 <h2>Add Employee</h2>
 <form name="addEmpForm" class="add-employee" ng-submit="add(addEmpForm.$valid)" novalidate >
+	<div ng-show="addEmpForm.$pristine && status">
+		Data saved!
+	</div>
 	<div>
 		<label for="name">Name </label>
 		<input ng-model="employee.name" name="name" required />
