@@ -46,15 +46,19 @@ header,.container{
 }
 .content .container{
 	background-color:#fff;
-	padding-top:20px;
+	padding:20px 0;
 }
 .content{
 	clear:both;
 	}
 section{
 	padding:10px 20px;
-  clear:both;
-min-height:150px;
+  	clear:both;
+	min-height:100px;
+}
+section.employee-info{
+min-height:0;
+padding:0;
 }
 section div{
 	padding:6px 0;
@@ -105,7 +109,11 @@ padding-right:5px;
 .error-msg{
 padding:0 0 0 21%;
 }
-
+.info-msg{
+padding-left: 21%;
+background-color: #f1f1f1;
+margin-bottom: 10px;
+}
 
 
 @media screen and (max-width:480px){
