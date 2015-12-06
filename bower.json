@@ -1,0 +1,16 @@
+{
+  "name": "static",
+  "version": "0.0.0",
+  "homepage": "https://github.com/baseev/LocalCRUD",
+  "authors": [
+    "Baseev Kumar <baseev@gmail.com>"
+  ],
+  "directory": "public/components/",
+  "license": "MIT",
+  "ignore": [],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-route": "~1.4.8",
+    "angular-resource": "~1.4.8"
+  }
+}
