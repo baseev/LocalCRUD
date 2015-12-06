@@ -30,7 +30,7 @@
 	<div>
 		<label for="joining_date">Joining date </label>
 		<input type="text" ng-model="employee['joining date']" name="joining_date" placeholder="dd-MM-yyyy" required date-validate />
-		<br/>
+		<br/> 
 		<div ng-show="addEmpForm.$submitted" class="error-msg">
     			<div ng-show="addEmpForm.joining_date.$error.required || addEmpForm.joining_date.$error.dateValidate">Please enter employee joining date.</div>
 		</div>
