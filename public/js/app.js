@@ -128,13 +128,6 @@ angular.module('index').controller('indexCtrl', ['$scope', '$routeParams', '$loc
 		var data = dataStore.remove(index);
 		console.log("delete... "+JSON.stringify(data));
 	},
-	$scope.isActiveTab = function(tabNo) {
-		return tabNo == $scope.currentTab;	
-	},
-	$scope.onClickTab = function(loc) {
-		console.log('clicked... '+loc);
-		$location.path(loc);
-	},	
 	$scope.onExit = function() {
 		try {
       			persistenceService.save(JSON.stringify(dataStore.getAll()));
