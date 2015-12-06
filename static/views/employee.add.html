@@ -1,33 +1,50 @@
 <section>
 <h2>Add Employee</h2>
-<form name="addEmpForm" class="add-employee" ng-submit="add(addEmpForm.$valid)" novalidate>
-<div>
-<label>Name </label><input ng-model="employee.name" name="name" required />
-<br/>
-<div ng-show="addEmpForm.$submitted">
-    <div ng-show="addEmpForm.name.$error.required">Please enter employee name.</div>
-</div>
-<label>Title </label><input ng-model="employee.title" name="title" required />
-<br/>
-<div ng-show="addEmpForm.$submitted">
-    <div ng-show="addEmpForm.title.$error.required">Please enter employee title.</div>
-</div>
-<label>Description </label><input ng-model="employee.description" name="description" required />
-<br/>
-<div ng-show="addEmpForm.$submitted">
-    <div ng-show="addEmpForm.description.$error.required">Please enter employee description.</div>
-</div>
-<label>Joining date </label><input ng-model="employee['joining date']" name="joining_date" required />
-<br/>
-<div ng-show="addEmpForm.$submitted">
-    <div ng-show="addEmpForm.joining_date.$error.required">Please enter employee joining date.</div>
-</div>
-<label>Years of experice </label><input ng-model="employee['years of experice']" name="years_of_experice" required />
-<br/>
-<div ng-show="addEmpForm.$submitted">
-    <div ng-show="addEmpForm.years_of_experice.$error.required">Please enter employee years of experience.</div>
-</div>
-<input type="submit" value="Save" />
-</div>
+<form name="addEmpForm" class="add-employee" ng-submit="add(addEmpForm.$valid)" novalidate >
+	<div>
+		<label for="name">Name </label>
+		<input ng-model="employee.name" name="name" required />
+		<br/>
+		<div ng-show="addEmpForm.$submitted">
+    			<div ng-show="addEmpForm.name.$error.required">Please enter employee name.</div>
+		</div>
+	</div>
+
+	<div>
+		<label for="title">Title </label>
+		<input ng-model="employee.title" name="title" required />
+		<br/>
+		<div ng-show="addEmpForm.$submitted">
+    			<div ng-show="addEmpForm.title.$error.required">Please enter employee title.</div>
+		</div>
+	</div>
+
+	<div>		
+		<label for="description">Description </label>
+		<input ng-model="employee.description" name="description" required />
+		<br/>
+		<div ng-show="addEmpForm.$submitted">
+    				<div ng-show="addEmpForm.description.$error.required">Please enter employee description.</div>
+		</div>
+	</div>
+	<div>
+		<label for="joining_date">Joining date </label>
+		<input type="text" ng-model="employee['joining date']" name="joining_date" placeholder="dd-MM-yyyy" required date-validate />
+		<br/>
+		<div>
+    			<div ng-show="addEmpForm.joining_date.$error.required || addEmpForm.joining_date.$error.dateValidate">Please enter employee joining date.</div>
+		</div>
+	</div>
+	<div>		
+		<label for="years_of_experice">Years of experice </label>
+		<input ng-model="employee['years of experice']" name="years_of_experice" type="text" required number-validate />
+		<br/>
+		<div ng-show="addEmpForm.$submitted">
+    			<div ng-show="addEmpForm.years_of_experice.$error.required || addEmpForm.years_of_experice.$error.numberValidate">Please enter employee years of experience.</div>
+		</div>
+	</div>
+	<div>
+		<input type="submit" value="Save" />
+	</div>
 </form>
-</section>
+</section>	

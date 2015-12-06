@@ -55,9 +55,12 @@ section{
 section div{
 	padding:6px 0;
 }
-.employee-info div{
+/*.employee-info div{
 	padding:3px 0;
-	}
+	}*/
+.employee-info > div{
+padding-left:30%;
+}
 .employee-info h3{
 	margin:5px 0;
 }
@@ -65,6 +68,7 @@ section label{
 	display:inline-block;
 	width:150px;
 	text-align:right;
+	padding-right:5px;
 }
 section input{
 	  width: 260px;
@@ -78,6 +82,21 @@ input:focus{
 	border-color:#58ACFA;
 	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+input[type=submit]{
+width:initial;
+margin-left:20%;
+}
+input[type=submit] + a{
+padding:0 10px;
+}
+.emp-search > div{
+width:45%;
+float:left;
+}
+section.emp-search label{
+width:70px;
+padding-right:5px;
 }
 
 
@@ -97,6 +116,13 @@ input:focus{
 		}
 	header,.container{
 		width:100%;
+		}
+	
+	}
+	@media screen and (max-width:760px){
+		.emp-search > div{
+		width:100%;
+		float:none;
 		}
 	}
 	
