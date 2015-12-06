@@ -153,15 +153,15 @@ angular.module('index').controller('indexCtrl', ['$scope', '$routeParams', '$loc
 angular.module('index').config(['$routeProvider', function($routeProvider) {
 		$routeProvider.
 		when('/employee', {
-			templateUrl: 'static/views/employee.index.html',
+			templateUrl: 'public/views/employee.index.html',
 			controller: 'indexCtrl'
 		}).
 		when('/employee/add', {
-			templateUrl: 'static/views/employee.add.html',
+			templateUrl: 'public/views/employee.add.html',
 			controller: 'indexCtrl'
 		}).
 		when('/employee/edit/:employeeId', {
-			templateUrl: 'static/views/employee.edit.html',
+			templateUrl: 'public/views/employee.edit.html',
 			controller: 'indexCtrl'
 		})
 	}
