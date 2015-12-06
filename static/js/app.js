@@ -94,33 +94,47 @@ angular.module('index').directive("dateValidate", [function() {
     };
 }]);
 
-//Controller
+
+//Index Controller
 angular.module('index').controller('indexCtrl', ['$scope', '$routeParams', '$location', '$window', 'dataStore', 'persistenceService', 
-                                                 function($scope, $routeParams, $location, $window, dataStore, persistenceService, window) {	
+                                                 function($scope, $routeParams, $location, $window, dataStore, persistenceService) {	
+	$scope.currentTab = 1;	
 	$scope.init = function() {
+		$scope.currentTab = 1;
 		$scope.employees = dataStore.getAll()
 		console.log("init... "+JSON.stringify($scope.employees));
 	},
 	$scope.add = function(isValid) {
+		$scope.currentTab = 2;
 		if(!isValid) return;
 		var data = dataStore.save($scope.employee);
 		console.log("add... "+JSON.stringify(data));	
 		$scope.employee = null;
 	},
 	$scope.edit = function() {
+		$scope.currentTab = 1;
 		$scope.employee = dataStore.get($routeParams.employeeId);
 		console.log($routeParams.employeeId+" edit... "+JSON.stringify($scope.employee));
 	},
 	$scope.update = function(isValid) {
+		$scope.currentTab = 1;
 		if(!isValid) return;
 		var data = dataStore.update($routeParams.employeeId, $scope.employee);
 		console.log("update... "+JSON.stringify(data));
 		$location.path('/employee');
 	},
 	$scope.remove = function(index) {
+		$scope.currentTab = 1;
 		var data = dataStore.remove(index);
 		console.log("delete... "+JSON.stringify(data));
 	},
+	$scope.isActiveTab = function(tabNo) {
+		return tabNo == $scope.currentTab;	
+	},
+	$scope.onClickTab = function(loc) {
+		console.log('clicked... '+loc);
+		$location.path(loc);
+	},	
 	$scope.onExit = function() {
 		try {
       			persistenceService.save(JSON.stringify(dataStore.getAll()));
@@ -132,6 +146,7 @@ angular.module('index').controller('indexCtrl', ['$scope', '$routeParams', '$loc
 	$window.onbeforeunload = function(){
   		$scope.onExit();  
 	}; 	
+
 }]);
 
 //Routes
