@@ -102,6 +102,9 @@ angular.module('index').controller('indexCtrl', ['$scope', '$routeParams', '$loc
 	$scope.init = function() {
 		$scope.currentTab = 1;
 		$scope.employees = dataStore.getAll()
+		if($scope.employees < 1) { 
+		   $location.path('/employee/add'); 
+		}
 		console.log("init... "+JSON.stringify($scope.employees));
 	},
 	$scope.add = function(isValid) {
