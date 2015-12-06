@@ -163,7 +163,10 @@ angular.module('index').config(['$routeProvider', function($routeProvider) {
 		when('/employee/edit/:employeeId', {
 			templateUrl: 'public/views/employee.edit.html',
 			controller: 'indexCtrl'
-		})
+		}).
+		otherwise({
+        		redirectTo: '/employee'
+      		});
 	}
 
 ]);
