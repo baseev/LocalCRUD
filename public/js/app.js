@@ -97,18 +97,15 @@ angular.module('index').directive("dateValidate", [function() {
 
 //Index Controller
 angular.module('index').controller('indexCtrl', ['$scope', '$routeParams', '$location', '$window', 'dataStore', 'persistenceService', 
-                                                 function($scope, $routeParams, $location, $window, dataStore, persistenceService) {	
-	$scope.currentTab = 1;	
+                                                 function($scope, $routeParams, $location, $window, dataStore, persistenceService) {		
 	$scope.init = function() {
-		$scope.currentTab = 1;
 		$scope.employees = dataStore.getAll()
-		if($scope.employees < 1) { 
+		if($scope.employees.length < 1) { 
 		   $location.path('/employee/add'); 
 		}
 		console.log("init... "+JSON.stringify($scope.employees));
 	},
 	$scope.add = function(isValid) {
-		$scope.currentTab = 2;
 		if(!isValid) return;
 		var data = dataStore.save($scope.employee);
 		console.log("add... "+JSON.stringify(data));	
@@ -118,19 +115,16 @@ angular.module('index').controller('indexCtrl', ['$scope', '$routeParams', '$loc
 		$scope.currentRecord={};
 	},
 	$scope.edit = function() {
-		$scope.currentTab = 1;
 		$scope.employee = dataStore.get($routeParams.employeeId);
 		console.log($routeParams.employeeId+" edit... "+JSON.stringify($scope.employee));
 	},
 	$scope.update = function(isValid) {
-		$scope.currentTab = 1;
 		if(!isValid) return;
 		var data = dataStore.update($routeParams.employeeId, $scope.employee);
 		console.log("update... "+JSON.stringify(data));
 		$location.path('/employee');
 	},
 	$scope.remove = function(index) {
-		$scope.currentTab = 1;
 		var data = dataStore.remove(index);
 		console.log("delete... "+JSON.stringify(data));
 	},
