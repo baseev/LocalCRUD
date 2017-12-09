@@ -128,6 +128,8 @@ angular.module('index').controller('indexCtrl', ['$scope', '$routeParams', '$loc
 		var data = dataStore.remove(index);
 		console.log("delete... "+JSON.stringify(data));
 	},
+
+	// Do not touch this part
 	$scope.onExit = function() {
 		try {
       			persistenceService.save(JSON.stringify(dataStore.getAll()));
